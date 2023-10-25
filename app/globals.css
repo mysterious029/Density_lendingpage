@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  font-family: 'Poppins', sans-serif;
+}
+
+@layer utilities {
+  @variants responsive {
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+  }
+}
+
+/* scrollbar  */
+
+/* width */
+::-webkit-scrollbar {
+  border-radius: 20px;
+  width: 12px;
+  transition-duration: 300ms;
+
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #B39FFC;
+  transition-duration: '0.3s';
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8a6bfc;
+}
+
+/* timeline css */
+
+.timeline {
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.timestamp {
+  margin-bottom: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-bottom: 4px dashed #ead8b8;
+}
+
+.status {
+  margin-top: 30px;
+  width: 200px;
+  display: flex;
+  align-items: 'center';
+  justify-content: center;
+  position: relative;
+  transition: all 200ms ease-in;
+}
+
+
+#last {
+  border-bottom: none;
+}
+
+
+@media (min-device-width: 320px) and (max-device-width: 700px) {
+  .timeline {
+    list-style-type: none;
+    display: block;
+  }
+
+  .li {
+    transition: all 200ms ease-in;
+    display: flex;
+    width: inherit;
+  }
+
+  .timestamp {
+    width: 100px;
+    border-bottom: none;
+  }
+}
